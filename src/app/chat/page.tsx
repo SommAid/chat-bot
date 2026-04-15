@@ -75,12 +75,12 @@ function ChatContent() {
   return (
     <div className="h-screen w-full bg-slate-950 flex justify-center overflow-hidden">
       <div className="h-full w-full max-w-xl bg-slate-900 flex flex-col border-x border-slate-800 shadow-2xl">
-        {/* Header with Exit Button */}
+        {/* Header information and exit buttons (back and exit do same thing) */}
         <header className="bg-indigo-600 p-4 flex items-center justify-between shrink-0 shadow-md">
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-white/80 hover:text-white transition-colors">
+            <button onClick={handleExit} className="text-white/80 hover:text-white transition-colors">
               <ChevronLeft size={24} />
-            </Link>
+            </button>
             <div className="flex items-center gap-3 text-white">
               <div className="bg-white/20 p-2 rounded-lg">
                 <MessageSquare size={20} />
@@ -104,7 +104,7 @@ function ChatContent() {
           </button>
         </header>
 
-        {/* Message Thread */}
+        {/* Message board */}
         <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-6 scrollbar-thin scrollbar-thumb-slate-700">
           {messages.map((m, i) => (
             <div 
@@ -129,9 +129,8 @@ function ChatContent() {
           <div ref={chatEndRef} />
         </div>
 
-        {/* Footer Area */}
         <footer className="p-4 bg-slate-900 border-t border-slate-800 space-y-4">
-          {/* FAQ Labels */}
+          {/* FAQs */}
           <div className="flex flex-col gap-2">
             <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Frequently Asked</span>
             <div className="flex flex-wrap gap-2">
@@ -149,7 +148,7 @@ function ChatContent() {
             </div>
           </div>
 
-          {/* Input Field */}
+          {/* User input field */}
           <div className="flex gap-2 bg-slate-950 p-1.5 rounded-xl border border-slate-700 focus-within:border-indigo-500/50 transition-all shadow-inner">
             <input 
               value={inputValue} 

@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const router = useRouter();
 
-  // Form State
+  // User info form state
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -41,15 +41,12 @@ export default function Home() {
   return (
     <div className="font-sans min-h-screen flex flex-col">
       <main className="flex justify-center min-h-[calc(100vh-4rem)] p-8 relative overflow-hidden bg-slate-950">
-        {/* Subtle Background Gradients */}
         <div className="absolute top-0 left-0 w-full h-full bg-slate-950 -z-20"></div>
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-200 h-200 bg-slate-900/30 rounded-full blur-3xl -z-10"></div>
 
-        {/* Main Content Grid */}
         <div className="flex flex-col items-center justify-center w-full max-w-5xl z-10 pr-16 md:pr-0">
           <div className="flex flex-col items-center gap-12 w-full">
             
-            {/* New Input Section */}
             <div className="w-full max-w-md bg-slate-900/50 p-8 rounded-2xl border border-slate-800 backdrop-blur-sm shadow-xl">
               <div className="flex items-center gap-3 mb-6">
                 <UserPlus className="text-indigo-500 w-6 h-6" />

@@ -1,8 +1,8 @@
 'use client';
 
 import { Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { MessageSquare, Bot, ChevronLeft, LogOut } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
+import { MessageSquare, Bot, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default function EndPageWrapper() {
@@ -15,17 +15,11 @@ export default function EndPageWrapper() {
 
 function EndPage() {
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const firstName = searchParams.get('firstName') || 'User';
   const lastName = searchParams.get('lastName') || '';
   const email = searchParams.get('email') || '';  
 
-  const handleEndSession = () => {
-    // You can clear local storage or cookies here if needed
-    router.push('/');
-  };
-    
   return (
     <div className="h-screen w-full bg-slate-950 flex justify-center overflow-hidden">
       <div className="h-full w-full max-w-xl bg-slate-900 flex flex-col border-x border-slate-800 shadow-2xl">
@@ -47,10 +41,9 @@ function EndPage() {
           </div>
         </header>
 
-        {/* Content Area */}
+        {/* Ending page message */}
         <div className="flex-1 overflow-y-auto p-6 md:p-10 flex flex-col items-center text-center space-y-8">
           
-          {/* Bot Greeting */}
           <div className="flex flex-col items-center gap-4 mt-10">
             <div className="w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
               <Bot size={32} className="text-white" />
@@ -64,7 +57,6 @@ function EndPage() {
             </div>
           </div>
 
-          {/* Credits Section */}
           <div className="bg-slate-950/50 p-6 rounded-2xl border border-slate-800 w-full text-left">
               <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Bot Information</p>
               <div className="space-y-1">
