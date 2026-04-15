@@ -1,0 +1,34 @@
+{
+  "name": "chat-bot",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [3000], 
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postCreateCommand": "yarn install",
+  "remoteUser": "root"
+}
