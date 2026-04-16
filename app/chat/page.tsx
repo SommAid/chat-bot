@@ -56,7 +56,7 @@ function ChatContent() {
       } 
       
       setMessages(prev => [...prev, { role: 'bot', text: response }]);
-    }, 600);
+    }, 200);
   };
 
     const handleExit = (e: React.FormEvent) => {
